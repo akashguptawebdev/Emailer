@@ -26,6 +26,13 @@ app.use('/preview/:filename', (req, res) => {
   });
 });
 
+app.get("/", (req , res)=>{
+  res.status(200).json({
+    message:"Home route",
+    sucess:true
+  })
+})
+
 connectDB();
 app.listen(process.env.PORT , ()=>{
     console.log("server start on port " + process.env.PORT)
